@@ -19,7 +19,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
+          "options": {  // 빌드 관련 옵션
             "outputPath": "dist/front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
