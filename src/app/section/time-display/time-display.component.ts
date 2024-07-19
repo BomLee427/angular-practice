@@ -75,11 +75,17 @@ export class TimeDisplayComponent implements OnInit {
       if (propName == 'inputData') {
 
         if (changes[propName].currentValue == 'start') {
+
           this.timeStart();
+
         } else if (changes[propName].currentValue == 'stop') {
+
           this.timeStop();
+
         } else if (changes[propName].currentValue == 'reset') {
+
           this.timeReset();
+          
         }
 
       }

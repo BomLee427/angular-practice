@@ -16,21 +16,13 @@ export class ButtonsComponent implements OnInit {
 
   constructor() { }
 
-  start($event: MouseEvent) {
+  executeButton(command: string) {
 
     // 부모 컴포넌트가 이벤트를 대기하게 함.
     // buttons의 start를 호출 -> start가 부모 엘리먼트의 clickEvent를 emit -> app-buttons의 clickEvent가 발생해서 startTime이 호출됨
     // emit()의 인자로 전달하고자 하는 데이터를 넣을 수 있음
-    this.clickEvent.emit('start');
+    this.clickEvent.emit(command);
     
-  }
-
-  stop($event: MouseEvent) {
-    this.clickEvent.emit('stop');
-  }
-
-  reset($event: MouseEvent) {
-    this.clickEvent.emit('reset');
   }
 
   ngOnInit(): void {
