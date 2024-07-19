@@ -8,10 +8,13 @@ import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 export class TimeDisplayComponent implements OnInit {
 
 
-  // not undefined 명시
   @Input() inputData!: string; 
 
-  test: number = 1;
+  min: number = 0;
+  sec: number = 0;
+  ms: number = 0;
+
+  timeInterval!: NodeJS.Timeout;
 
   constructor() {
 
@@ -26,6 +29,39 @@ export class TimeDisplayComponent implements OnInit {
 
   }
 
+  timeStart() {
+    this.timeInterval = setInterval(() => {
+      
+      if (this.ms < 100) {
+        this.ms ++;
+
+      } else {
+        this.ms = 0;
+
+        if (this.sec < 60) {
+          this.sec ++;
+
+        } else {
+          this.sec = 0;
+          this.min ++;
+
+        }
+      }
+    }, 10);
+
+  }
+
+  timeStop() {
+    clearInterval(this.timeInterval);
+  }
+
+  timeReset() {
+    clearInterval(this.timeInterval);
+    this.min = 0;
+    this.sec = 0;
+    this.ms = 0;
+  }
+
   ngOnInit(): void { // 컴포넌트 생명주기와 관련
   }
 
@@ -33,8 +69,20 @@ export class TimeDisplayComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
 
     console.log(changes);
+
     for (let propName in changes) {
 
+      if (propName == 'inputData') {
+
+        if (changes[propName].currentValue == 'start') {
+          this.timeStart();
+        } else if (changes[propName].currentValue == 'stop') {
+          this.timeStop();
+        } else if (changes[propName].currentValue == 'reset') {
+          this.timeReset();
+        }
+
+      }
     }
   }
 
