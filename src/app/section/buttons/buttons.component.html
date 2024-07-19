@@ -1,0 +1,20 @@
+<div>
+
+    <!-- 
+        이벤트 에미터(이벤트 리스너) 바인딩
+        문법은 태그 안에 소괄호
+        이벤트를 함수의 매개변수로 넘겨주려면 $event (키워드처럼 정해져 있음)
+
+        이벤트 바인딩도 단방향
+     -->
+    <button id="start-btn" (click)="start($event)">
+        Start
+    </button>
+    <button id="stop-btn">
+        Stop
+    </button>
+    <button id="reset-btn">
+        Reset
+    </button>
+
+</div>
