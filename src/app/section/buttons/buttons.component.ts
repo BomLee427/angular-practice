@@ -14,6 +14,14 @@ export class ButtonsComponent implements OnInit {
   @Output() clickEvent = new EventEmitter<string>();
 
 
+
+  // 하지만 EventEmitter를 사용하는 것은 기능에 비해 굉장히 복잡한 구현방법이다.
+  // 그냥 time-display가 buttons를 포함하고 있다면 구현이 매우 쉬웠을 것이다.
+
+
+  // 설계 방식을 선택하는 기준: 컴포넌트의 "재사용성"에 초점을 맞추는 것이 좋다.
+
+
   constructor() { }
 
   executeButton(command: string) {

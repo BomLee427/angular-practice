@@ -35,13 +35,13 @@ export class TimeDisplayComponent implements OnInit {
       if (this.ms < 100) {
         this.ms ++;
 
-      } else {
+      } else {  // 초 증가
         this.ms = 0;
 
         if (this.sec < 60) {
           this.sec ++;
 
-        } else {
+        } else {  // 분 증가
           this.sec = 0;
           this.min ++;
 
@@ -74,22 +74,27 @@ export class TimeDisplayComponent implements OnInit {
 
       if (propName == 'inputData') {
 
-        if (changes[propName].currentValue == 'start') {
+        switch (changes[propName].currentValue) {
+          case 'start':
 
-          this.timeStart();
-
-        } else if (changes[propName].currentValue == 'stop') {
-
-          this.timeStop();
-
-        } else if (changes[propName].currentValue == 'reset') {
-
-          this.timeReset();
+            this.timeStart();
+            break;
+        
+          case 'stop':
           
+            this.timeStop();
+            break;
+      
+          case 'reset':
+          
+            this.timeReset();
+            break;
         }
 
       }
+
     }
+    
   }
 
 }
