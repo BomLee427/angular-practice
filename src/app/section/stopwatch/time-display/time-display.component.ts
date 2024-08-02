@@ -30,6 +30,7 @@ export class TimeDisplayComponent implements OnInit {
   }
 
   timeStart() {
+    this.timeStop();
     this.timeInterval = setInterval(() => {
       
       if (this.ms < 100) {

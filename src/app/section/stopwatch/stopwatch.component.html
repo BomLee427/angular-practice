@@ -1,7 +1,8 @@
+<!-- StopwatchModule -->
 <div class="title">
   
     <div class="center-align">
-
+        <!-- StopwatchModule -->
         <app-time-display [inputData]="present"></app-time-display>
         <!-- <app-time-display></app-time-display> -->
 
@@ -9,8 +10,10 @@
         <!-- <app-time-display></app-time-display>
         <app-time-display></app-time-display> -->
         
+        <!-- StopwatchModule -->
         <app-buttons (clickEvent)="startTime($event)"></app-buttons>
 
+        <hr>
 
         <!-- 버튼 컴포넌트 재사용 예제 -->
         <div> 
@@ -18,6 +21,8 @@
         </div>
         <app-buttons (clickEvent)="commandText = $event"></app-buttons>
     
+        <hr>
+        <a [routerLink]="['/clock']">시계로 이동</a>
     </div>
 
 </div>

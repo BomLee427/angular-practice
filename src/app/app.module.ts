@@ -17,7 +17,7 @@ import { SectionModule } from './section/section.module';
 
 @NgModule({
   declarations: [   // 컴포넌트들을 이 곳에서 정의해 주어야 앵귤러가 인식한다.
-    AppComponent, 
+    AppComponent,
   ],
 
   /**
@@ -28,6 +28,9 @@ import { SectionModule } from './section/section.module';
    */
   imports: [
     BrowserModule,
+    /**
+     * 라우팅이라는 관심사를 모아둔 모듈
+     */
     AppRoutingModule,
     LayoutModule,
     SectionModule,
