@@ -5,6 +5,7 @@ import { StopwatchModule } from './stopwatch/stopwatch.module';
 import { RouterModule, Routes } from '@angular/router';
 import { StopwatchComponent } from './stopwatch/stopwatch.component';
 import { ClockComponent } from './clock/clock.component';
+import { PageToggleService } from '../share/page-toggle.service';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     StopwatchModule
+  ],
+  // 모듈 수준의 Provider. 배열 안에는 Injectable한 클래스들이 들어올 수 있음
+  providers: [
+    PageToggleService
   ]
 })
 export class SectionModule { }
