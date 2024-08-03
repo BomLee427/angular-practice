@@ -13,16 +13,15 @@
         <!-- StopwatchModule -->
         <app-buttons (clickEvent)="startTime($event)"></app-buttons>
 
-        <hr>
+        <hr width="80%">
 
         <!-- 버튼 컴포넌트 재사용 예제 -->
-        <div> 
+        <!-- <div> 
             {{commandText}}
         </div>
-        <app-buttons (clickEvent)="commandText = $event"></app-buttons>
+        <app-buttons (clickEvent)="commandText = $event"></app-buttons> -->
     
-        <hr>
-        <a [routerLink]="['/clock']">시계로 이동</a>
+        <!-- <a [routerLink]="['/clock']">시계로 이동</a> -->
         <button (click)="goClock()">시계로 이동</button>
     </div>
 
